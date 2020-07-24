@@ -1,0 +1,160 @@
+@import 'colors';
+@import 'fonts';
+
+$CARD_BORDER_RADIUS: 5px;
+$CARD_LINE_HEIGHT: 1.2rem;
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.trip-planner {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -39px;
+}
+
+.trip-planner-container {
+  border: 1px solid $primary-dark;
+  margin: 0 15px;
+  padding: 10px;
+  border-radius: $CARD_BORDER_RADIUS;
+  background-color: rgba($color: $primary-light, $alpha: 0.95);
+  color: $primary-dark;
+  line-height: $CARD_LINE_HEIGHT;
+  box-shadow: 10px 10px 5px -4px rgba(0, 0, 0, 0.29);
+  width: 375px;
+  h2 {
+    font-family: $font-header;
+    text-align: center;
+  }
+}
+
+.trip-planner-data {
+  margin-top: 15px;
+}
+
+.trip-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+}
+
+.trip-planner-button {
+  margin: 10px 0 0 110px;
+}
+
+.trip-result-container {
+  border: 1px solid $primary-dark;
+  margin: 50px 15px 10px 15px;
+  padding: 10px;
+  border-radius: $CARD_BORDER_RADIUS;
+  background-color: rgba($color: $primary-dark, $alpha: 0.8);
+  color: $primary-light;
+  display: grid;
+  grid-template-columns: 1fr 70px 3fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'pic icons title'
+    'pic icons info'
+    'pic icons more';
+  gap: 10px 0;
+  line-height: $CARD_LINE_HEIGHT;
+}
+
+.trip-result-pic {
+  grid-column-start: pic;
+  grid-column-end: pic;
+  grid-row-start: pic;
+  grid-row-end: pic;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: $CARD_BORDER_RADIUS;
+}
+
+.trip-result-icons {
+  grid-column-start: icons;
+  grid-column-end: icons;
+  grid-row-start: icons;
+  grid-row-end: icons;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  i {
+    margin: 2px;
+    font-size: 1.5rem;
+    transition-property: all;
+    transition-duration: 200ms;
+    &:hover {
+      font-size: 2rem;
+      color: $secondary-light;
+      cursor: pointer;
+    }
+  }
+}
+
+.trip-result-title {
+  grid-column-start: title;
+  grid-column-end: title;
+  grid-row-start: title;
+  grid-row-end: title;
+  display: flex;
+  justify-content: space-between;
+  line-height: normal;
+  .trip-target {
+    font-family: $font-header;
+  }
+  i {
+    margin: 10px 5px 0 0;
+  }
+}
+
+.trip-result-info {
+  grid-column-start: info;
+  grid-column-end: info;
+  grid-row-start: info;
+  grid-row-end: info;
+  font-weight: 100;
+}
+
+.trip-result-more {
+  grid-column-start: more;
+  grid-column-end: more;
+  grid-row-start: more;
+  grid-row-end: more;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  font-weight: 100;
+  .more-button {
+    margin-top: 6px;
+    margin-left: auto;
+    font-size: 0.7em;
+  }
+}
+
+.favicon:hover {
+  color: $secondary;
+  cursor: pointer;
+}
+
+.errorMessage {
+  color: red;
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+.trip-result-pic-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column-start: pic;
+  grid-column-end: pic;
+  grid-row-start: pic;
+  grid-row-end: pic;
+  object-fit: cover;
+  border-radius: $CARD_BORDER_RADIUS;
+}

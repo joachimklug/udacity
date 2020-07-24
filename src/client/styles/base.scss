@@ -1,0 +1,103 @@
+// #########
+// BASE SCSS file defines global styles
+// #########
+
+@import 'fonts';
+@import 'colors';
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  font-family: $font-body;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  &::after {
+    content: '';
+    background-image: url('../assets/pattern-seamless.jpg');
+    background-size: 50rem;
+    background-repeat: repeat;
+    filter: grayscale(100%);
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+a {
+  color: $primary-light;
+  cursor: pointer;
+  &:hover {
+    color: $secondary;
+  }
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.form-row {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+  font-style: 12px;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.form-row label {
+  text-align: right;
+  width: 110px;
+  margin-top: 7px;
+  padding-right: 20px;
+}
+
+.form-row input {
+  width: 240px;
+  background-color: #ffffff;
+  border: 1px solid $primary-dark;
+  border-radius: 3px;
+  padding: 7px;
+  &:hover {
+    border: 1px solid $secondary;
+  }
+}
+
+.form-row label {
+  margin-bottom: 13px;
+}
+
+button {
+  background-color: white;
+  border: 1px solid $primary-dark;
+  border-radius: 5px;
+  padding: 10px;
+  &:hover {
+    border: 1px solid $secondary;
+  }
+  &:active {
+    color: $secondary;
+  }
+}

@@ -1,0 +1,30 @@
+@import 'fonts';
+@import 'colors';
+
+header {
+  font-family: $font-header;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
+    url('https://picsum.photos/id/1011/1200/600');
+
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.header-text {
+  text-align: center;
+  position: absolute;
+  color: $primary-light;
+  & > *:not(:last-child) {
+    padding-bottom: 25px;
+  }
+  .submission-by {
+    font-family: $font-body;
+    font-size: 0.7rem;
+    font-weight: 100;
+  }
+}

@@ -1,0 +1,9 @@
+node_modules
+dist
+.npmrc
+
+# Usually the .env file is excluded and only .env.template included
+# for this submission however we keep .env to reproduce the code
+# without the requirement to enter custom keys.
+
+#.env

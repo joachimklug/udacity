@@ -1,0 +1,42 @@
+@import 'colors';
+
+footer {
+  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  background-color: $primary-light;
+  padding: 20px 30px 20px 30px;
+  justify-content: start;
+  align-items: stretch;
+  flex-wrap: wrap-reverse;
+  font-weight: 100;
+  @media only screen and (min-width: 701px) {
+    justify-content: space-around;
+  }
+  a {
+    color: $primary-dark;
+  }
+}
+
+.footer-content-block {
+  border-left: $secondary 1px solid;
+  padding: 10px 0 5px 10px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  @media only screen and (min-width: 701px) {
+    margin-bottom: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  a {
+    cursor: pointer;
+    &:hover {
+      font-weight: 400;
+    }
+  }
+}

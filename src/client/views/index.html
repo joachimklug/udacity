@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <script src="https://kit.fontawesome.com/3469e7d4c8.js" crossorigin="anonymous"></script>
+    <title>Travel App</title>
+  </head>
+
+  <body class="background">
+    <div class="content">
+      <header>
+        <div class="header-text">
+          <h1>FEND Travel App</h1>
+          <p class="submission-by">submission by Joachim Klug</p>
+        </div>
+      </header>
+
+      <main>
+        <section class="trip-planner">
+          <div class="trip-planner-container">
+            <h2>Plan your trip</h2>
+            <hr />
+            <div class="trip-planner-data">
+              <form action="" method="get" class="trip-planner-form">
+                <div class="form-row">
+                  <label for="destination">Destinationnn:</label>
+                  <input id="destination" name="destination" type="text" placeholder="Enter City Name" />
+                </div>
+                <div class="form-row">
+                  <label for="start">Start date:</label>
+                  <input type="date" id="start" name="trip-start" onload="DateTime.now.strftime('%Y-%m-%d')" />
+                </div>
+                <div class="form-row">
+                  <label for="end">End date:</label>
+                  <input type="date" id="end" name="trip-end" />
+                </div>
+              </form>
+            </div>
+            <div class="trip-planner-button">
+              <button onclick="return Client.planTrip(event)">
+                Plan my trip
+              </button>
+            </div>
+          </div>
+        </section>
+        <section id="resultContainer" class="trip-results"></section>
+      </main>
+    </div>
+
+    <footer>
+      <div class="footer-content-block">
+        <a>The Team</a>
+        <a>Our History</a>
+        <a>Why fishes?</a>
+        <a>Who do you think I am?</a>
+      </div>
+      <div class="footer-content-block">
+        <a>Impressum</a>
+        <a>Our Sponsors</a>
+        <a>Donations</a>
+      </div>
+      <div class="footer-content-block">
+        <h3>Share your trip!</h3>
+        <form class="share-form">
+          <div class="form-row">
+            <input id="email" name="email" type="email" placeholder="joe@example.com" />
+          </div>
+          <div class="form-row">
+            <button>Share!</button>
+          </div>
+        </form>
+      </div>
+    </footer>
+
+    <!-- Service Worker registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
+  </body>
+</html>
