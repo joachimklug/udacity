@@ -64,6 +64,22 @@ app.post('/planTrip', async (req, res) => {
     const longitude = locationDetails.lng;
     const latitude = locationDetails.lat;
 
+    // Location details
+    let text = await locations
+      .getLocationText(payload.destination)
+      .then((locationDetails) =>
+        locationDetails.valid && locationDetails.response.geonames.length !== 0
+          ? locationDetails.response.geonames[0]
+          : false
+      );
+
+    if (!text) {
+      text = {
+        summary: 'No detailed text available',
+        wikipediaUrl: '',
+      };
+    }
+
     // Get weather information for trip
     const weatherDetails = await weatherAPI
       .getWeather(longitude, latitude)
@@ -90,14 +106,13 @@ app.post('/planTrip', async (req, res) => {
         picture.valid && picture.response.total !== 0 ? picture.response.hits[0].webformatURL : DEFAULT_PICTURE_URL
       );
 
-    const text = await locations.getLocationText(payload.destination).then((text) => text.shortText);
-
     res.send({
       valid: true,
       payload: {
         weather: weatherDetails,
         imageURL: image,
-        shortText: text,
+        shortText: text.summary,
+        shortTextMoreURL: text.wikipediaUrl,
       },
     });
   } else {

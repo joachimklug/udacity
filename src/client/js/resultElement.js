@@ -11,18 +11,15 @@ function createResultElement({
   weather,
   imageURL,
   shortText,
+  shortTextMoreURL,
   ...unusedValues
 }) {
   const resultElement = document.createElement('div');
   resultElement.classList = 'trip-result-container';
 
-  // Construct left side Picture
-  // const picture = document.createElement('img');
-  // picture.setAttribute('src', `${imageURL}`);
-  // picture.classList = 'trip-result-pic';
   const picture = document.createElement('div');
   picture.style.backgroundImage = `url(${imageURL})`;
-  picture.classList = 'trip-result-pic-2';
+  picture.classList = 'trip-result-pic';
 
   // Construct link bar in the middle
   const linkBar = `<div class="trip-result-icons">
@@ -60,11 +57,15 @@ function createResultElement({
   cityDetails.classList = 'trip-result-more';
   const detailsText = document.createElement('div');
   detailsText.innerText = `${shortText}`;
-  const linkForMore = document.createElement('a');
-  linkForMore.classList = 'more-button';
-  linkForMore.innerText = '[...continue reading]';
   cityDetails.appendChild(detailsText);
-  cityDetails.appendChild(linkForMore);
+  if (shortTextMoreURL.length) {
+    const linkForMore = document.createElement('a');
+    linkForMore.classList = 'more-button';
+    linkForMore.innerText = '[...continue reading]';
+    linkForMore.href = `http://${shortTextMoreURL}`;
+    linkForMore.target = '_blank';
+    cityDetails.appendChild(linkForMore);
+  }
 
   // Stitch together all created componenets
   resultElement.appendChild(picture);

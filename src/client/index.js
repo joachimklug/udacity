@@ -1,8 +1,9 @@
 import { planTrip } from './js/travelApp';
 import { createResultElement } from './js/resultElement';
-import { daysBetween, showError } from './js/helperFunctions';
+import { daysBetween, showError, styleToScreenSize } from './js/helperFunctions';
 
 import './js/helperFunctions';
+import './js/eventListeners';
 
 import './styles/resets.scss';
 import './styles/base.scss';
@@ -13,4 +14,4 @@ import './styles/footer.scss';
 import './assets/fish-seamless.png';
 import './assets/pattern-seamless.jpg';
 
-export { planTrip, createResultElement, daysBetween, showError };
+export { planTrip, createResultElement, daysBetween, showError, styleToScreenSize };

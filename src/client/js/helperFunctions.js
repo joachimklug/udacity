@@ -17,4 +17,17 @@ function showError(errorMessage) {
   }
 }
 
-export { daysBetween, showError };
+function styleToScreenSize() {
+  const tripResultContainer = document.querySelector('.trip-result-container');
+  const allTripResultContainer = document.querySelectorAll('.trip-result-container');
+  const allTripResultPics = document.querySelectorAll('.trip-result-pic');
+  if (tripResultContainer.clientWidth < 680) {
+    allTripResultContainer.forEach((container) => container.classList.add('trip-result-container-small'));
+    allTripResultPics.forEach((container) => container.classList.add('trip-result-pic-small'));
+  } else {
+    allTripResultContainer.forEach((container) => container.classList.remove('trip-result-container-small'));
+    allTripResultPics.forEach((container) => container.classList.remove('trip-result-pic-small'));
+  }
+}
+
+export { daysBetween, showError, styleToScreenSize };

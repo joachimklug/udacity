@@ -47,7 +47,7 @@ main {
 
 .trip-result-container {
   border: 1px solid $primary-dark;
-  margin: 50px 15px 10px 15px;
+  margin: 40px 10px 10px 10px;
   padding: 10px;
   border-radius: $CARD_BORDER_RADIUS;
   background-color: rgba($color: $primary-dark, $alpha: 0.8);
@@ -63,15 +63,29 @@ main {
   line-height: $CARD_LINE_HEIGHT;
 }
 
+.trip-result-container-small {
+  grid-template-columns: 70px 1fr 3fr;
+  grid-template-areas:
+    'pic pic pic'
+    'icons title title'
+    'icons info info'
+    'icons more more';
+}
+
 .trip-result-pic {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   grid-column-start: pic;
   grid-column-end: pic;
   grid-row-start: pic;
   grid-row-end: pic;
   object-fit: cover;
-  width: 100%;
-  height: 100%;
   border-radius: $CARD_BORDER_RADIUS;
+}
+
+.trip-result-pic-small {
+  height: 200px;
 }
 
 .trip-result-icons {
@@ -146,15 +160,4 @@ main {
   text-align: center;
   font-size: 0.8em;
   margin-top: 5px;
-}
-
-.trip-result-pic-2 {
-  background-repeat: no-repeat;
-  background-size: cover;
-  grid-column-start: pic;
-  grid-column-end: pic;
-  grid-row-start: pic;
-  grid-row-end: pic;
-  object-fit: cover;
-  border-radius: $CARD_BORDER_RADIUS;
 }

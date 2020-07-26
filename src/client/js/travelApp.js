@@ -45,9 +45,11 @@ async function planTrip(event) {
       weather: tripDetails.payload.weather,
       imageURL: tripDetails.payload.imageURL,
       shortText: tripDetails.payload.shortText,
+      shortTextMoreURL: tripDetails.payload.shortTextMoreURL,
     };
     resultContainer.insertAdjacentElement('afterbegin', Client.createResultElement(tripData));
     Client.showError('');
+    Client.styleToScreenSize();
   }
 }
 
